@@ -1,0 +1,68 @@
+#include<stdio.h>
+#include<graphics.h>
+#include<conio.h>
+#include<dos.h>
+ int main()
+   {
+    int gd = DETECT, gm ,i;
+     clrscr();
+    initgraph(&gd,&gm,"C:\\TurboC3\\BGI");
+     detectgraph(&gd,&gm);
+     for(i=50;i<=getmaxx();i++)
+     {
+     setcolor(3);
+     setfillstyle(SOLID_FILL,9);
+     circle(50+i,50,50);
+       floodfill(52+i,52,3);
+     delay(20);
+   
+     cleardevice();
+     }
+     for(i=getmaxx();i>=0;i--)
+     {
+     setcolor(3);
+     setfillstyle(SOLID_FILL,9);
+     circle(i,50,50);
+     floodfill(i+2,52,3);
+     delay(25);
+     cleardevice();
+     }
+     for(i=50;i<=getmaxx();i++)
+     {
+     setcolor(3);
+     setfillstyle(SOLID_FILL,9);
+     circle(50,i,50);
+     floodfill(52,i+2,3);
+     delay(20);
+     cleardevice();
+     }
+     for(i=getmaxx();i>=0;i--)
+     {
+     setcolor(3);
+     setfillstyle(SOLID_FILL,9);
+     circle(50,i,50);
+     floodfill(52,i+2,3);
+     delay(25);
+     cleardevice();
+     }
+     for(i=50;i<=getmaxx();i++)
+     {
+     setcolor(3);
+     setfillstyle(SOLID_FILL,9);
+     circle(i,i,50);
+     floodfill(i+2,i+2,3);
+     delay(20);
+     cleardevice();
+     }
+     for(i=getmaxx();i>=0;i--)
+     {
+     setcolor(3);
+     setfillstyle(SOLID_FILL,9);
+     circle(i,i,50);
+     floodfill(i+2,i+2,3);
+     delay(25);
+     cleardevice();
+     }
+     getch();
+     return 0;
+     }
